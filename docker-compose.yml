@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  hackazon:
+    image: bepsoccer/all-in-one-hackazon
+    container_name: hackazon
+    ports:
+      - "80:80"
+    restart: always
