@@ -26,6 +26,12 @@ chmod +700 easyDockerInstall
 sudo ./easyDockerInstall
 ```
 
+If this install fails, try running kaliDockerFix
+```shell
+chmod +700 kaliDockerFix
+sudo ./kaliDockerFix
+```
+
 ### Build and start
 Once Docker is installed, start the docker image:
 ```shell
