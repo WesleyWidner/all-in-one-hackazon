@@ -2,7 +2,44 @@ FROM ubuntu:14.04
 MAINTAINER Brad Parker <brad@parker1723.com>
 RUN apt-get update
 RUN apt-get -y upgrade
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql php5-ldap unzip python3 python3-pip
+#RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql php5-ldap unzip python3 python3-pip
+
+
+# ============== TESTING =======================================
+# Update package lists and install required packages
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install \
+    mysql-client \
+    apache2 \
+    libapache2-mod-php5 \
+    pwgen \
+    python-setuptools \
+    vim-tiny \
+    php5-mysql \
+    php5-ldap \
+    unzip \
+    python3 \
+    python3-pip \
+    wget \
+    lsb-release \
+    gnupg
+
+# Add MySQL 5.6 repository
+RUN wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb && \
+    DEBIAN_FRONTEND=noninteractive dpkg -i mysql-apt-config_0.8.18-1_all.deb
+
+# Update package lists after adding the repository
+RUN apt-get update
+
+# Install MySQL 5.6 server
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server=5.6
+
+# Clean up
+RUN rm mysql-apt-config_0.8.18-1_all.deb && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+# ==================================
+
 
 # setup hackazon
 RUN pip3 install supervisor
