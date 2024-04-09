@@ -7,8 +7,7 @@ RUN apt-get -y upgrade
 
 # ============== TESTING =======================================
 # Update package lists and install required packages
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install \
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     mysql-client \
     apache2 \
     libapache2-mod-php5 \
@@ -24,20 +23,17 @@ RUN apt-get update && \
     lsb-release \
     gnupg
 
-# Add MySQL 5.6 repository
-RUN wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb && \
-    DEBIAN_FRONTEND=noninteractive dpkg -i mysql-apt-config_0.8.18-1_all.deb
+# Download MySQL 5.6 package
+RUN wget https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.51-linux-glibc2.12-x86_64.tar.gz
 
-# Update package lists after adding the repository
-RUN apt-get update
+# Extract the downloaded package
+RUN tar -xzvf mysql-5.6.51-linux-glibc2.12-x86_64.tar.gz -C /usr/local/
 
-# Install MySQL 5.6 server
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server=5.6
+# Rename the extracted directory
+RUN mv /usr/local/mysql-5.6.51-linux-glibc2.12-x86_64 /usr/local/mysql
 
-# Clean up
-RUN rm mysql-apt-config_0.8.18-1_all.deb && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# Clean up downloaded tarball
+RUN rm mysql-5.6.51-linux-glibc2.12-x86_64.tar.gz
 # ==================================
 
 
