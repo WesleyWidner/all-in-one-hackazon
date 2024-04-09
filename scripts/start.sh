@@ -9,7 +9,8 @@ MYSQL_USER="root"
 MYSQL_PASSWORD=`date +%s|sha256sum|base64|head -c 10`
 HACKAZON_DB="hackazon"
 HACKAZON_USER="hackazon"
-HACKAZON_PASSWORD=`date +%s|sha256sum|base64|head -c 10`
+#HACKAZON_PASSWORD=`date +%s|sha256sum|base64|head -c 10`
+HACKAZON_PASSWORD="password"
 HASHED_PASSWORD=`php /passwordHash.php $HACKAZON_PASSWORD`
 
 #This is so the passwords show up in logs. 
