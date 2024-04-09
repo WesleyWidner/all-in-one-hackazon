@@ -1,2 +1,8 @@
+#!/bin/bash
+
 sudo docker build --rm -t bepsoccer/all-in-one-hackazon .
 sudo docker run --name hackazon -d -p 80:80 bepsoccer/all-in-one-hackazon
+
+sleep 5s
+
+sudo docker logs | grep "password"
