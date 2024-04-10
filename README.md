@@ -70,7 +70,7 @@ The admin credentials are:
 Username: admin
 Password: password
 ```
-Other valid Hackazon accounts include:
+These admin credentials also work for the regular localhost sign in. Other valid Hackazon accounts include:
 ```shell
 Username: test_user
 Password: 123456
