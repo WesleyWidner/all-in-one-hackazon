@@ -26,7 +26,7 @@ chmod +700 easyDockerInstall
 sudo ./easyDockerInstall
 ```
 
-If this install fails, try running kaliDockerFix
+If easyDockerInstall fails, try running kaliDockerFix
 ```shell
 chmod +700 kaliDockerFix
 sudo ./kaliDockerFix
@@ -35,17 +35,30 @@ sudo ./kaliDockerFix
 ### Build and start
 Once Docker is installed, start the docker image:
 ```shell
-sudo docker-compose up
+chmod +700 startDocker
+sudo ./startDocker
 ```
 
 ### Wait for 10 seconds and contact the server :
 ```shell
-firefox http://127.0.0.1:80
+firefox http://localhost:80
 
-chromium http://127.0.0.1:80
+chromium http://localhost:80
 ```
 
-Then begin to configure Hackazon (direct link is http://localhost/install/login for the configuration screen) -- use the existing DB password for the installer password as determined by the startup script. This password is echoed to the terminal following the docker-compose. This password is also available at the http://localhost/hackazon-db-pw.txt endpoint.
+### Stopping the container
+To stop the container, run
+```shell
+sudo docker stop hackazon
+```
+
+### Removing the container
+If you want to remove the container entirely, run
+```shell
+sudo docker rm hackazon
+```
+
+Then begin to configure Hackazon (direct link is http://localhost/install/login for the configuration screen) -- the default installer password (printed on startup) is "password". It's also available at the http://localhost/hackazon-db-pw.txt endpoint. You can change the DB password by editing line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh
 
 ## Special Thanks
 This project is a direct fork (+ a couple of edits) from cmutzel's all-in-one-hackazon project (https://github.com/cmutzel/all-in-one-hackazon) -- thanks for all of the hard work!
