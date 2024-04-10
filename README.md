@@ -60,5 +60,25 @@ sudo docker rm hackazon
 
 Then begin to configure Hackazon (direct link is http://localhost/install/login for the configuration screen) -- the default installer password (printed on startup) is "password". It's also available at the http://localhost/hackazon-db-pw.txt endpoint. You can change the DB password by editing line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh
 
+### Admin console
+The admin console for enabling/disabling vulnerabilities is available at
+```shell
+http://localhost/admin
+```
+The admin credentials are:
+```shell
+Username: admin
+Password: password
+```
+Other valid Hackazon accounts include:
+```shell
+Username: test_user
+Password: 123456
+===
+Username: hackazon
+Password: [password || the password you specified in line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh]
+===
+```
+
 ## Special Thanks
 This project is a direct fork (+ a couple of edits) from cmutzel's all-in-one-hackazon project (https://github.com/cmutzel/all-in-one-hackazon) -- thanks for all of the hard work!
