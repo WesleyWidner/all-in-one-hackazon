@@ -77,7 +77,6 @@ Password: 123456
 ===
 Username: hackazon
 Password: [password || the password you specified in line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh]
-===
 ```
 
 ## Special Thanks
