@@ -54,6 +54,7 @@ RUN cp /var/www/hackazon/assets/config/email.sample.php /var/www/hackazon/assets
 ADD ./configs/parameters.php /var/www/hackazon/assets/config/parameters.php
 ADD ./configs/rest.php /var/www/hackazon/assets/config/rest.php
 ADD ./configs/createdb.sql /var/www/hackazon/database/createdb.sql
+ADD ./configs/db.sql /var/www/hackazon/database/db.sql
 RUN chown -R www-data:www-data /var/www/
 RUN chown -R www-data:www-data /var/www/hackazon/web/products_pictures/
 RUN chown -R www-data:www-data /var/www/hackazon/web/upload
