@@ -39,7 +39,7 @@ chmod +700 startDocker
 sudo ./startDocker
 ```
 
-### Wait for 10 seconds and contact the server :
+### Wait for 10 seconds and contact the server:
 ```shell
 firefox http://localhost:80
 
@@ -56,6 +56,12 @@ sudo docker stop hackazon
 If you want to remove the container entirely, run
 ```shell
 sudo docker rm hackazon
+```
+
+### Restarting the container
+If you removed the container, you'll need to run the startDocker file again. If you've only stopped the container, you can start it with
+```shell
+sudo docker start hackazon
 ```
 
 Then begin to configure Hackazon (direct link is http://localhost/install/login for the configuration screen) -- the default installer password (printed on startup) is "password". It's also available at the http://localhost/hackazon-db-pw.txt endpoint. You can change the DB password by editing line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh
