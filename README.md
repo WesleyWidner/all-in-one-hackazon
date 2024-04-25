@@ -76,7 +76,12 @@ This will get you a shell inside the Docker build. The Hackazon source code is l
 To apply your changes, follow the instructions for *Stopping the container* and *Restarting the container*. DO NOT REMOVE THE CONTAINER OR YOUR CHANGES WILL BE LOST.
 
 ### Editing Hackazon source code from outside using VSCode
-Working on it...
+1. Install VSCode: https://code.visualstudio.com/download
+2. Navigate to extensions and install the "Dev Containers" extension
+3. You should now have a "Remote Explorer" icon on the left-side of your VSCode window; click on it, then click the "installing Docker" link to install Docker (you'll need to do this even if you've already installed Docker through WSL); you'll need to close and restart your PC afterwards
+4. Ensure the Hackazon container has been started
+5. Refresh/reload VSCode -- the "Remote Explorer" tab should now show the all-in-one-hackazon Docker container
+6. Working on it...
 
 ### Admin console
 The admin console for enabling/disabling vulnerabilities is available at
