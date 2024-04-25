@@ -66,6 +66,15 @@ If you removed the container, you'll need to run the startDocker file again. If 
 sudo docker start hackazon
 ```
 
+### Modifying the Hackazon sourec code (untested as of 04/25/2024)
+(THEORETICAL as of 04/25/2024) - If you need to modify the source code of the Hackazon instance running inside the Docker image:
+```shell
+sudo docker exec -t -i hackazon /bin/bash
+```
+This will get you a shell inside the Docker build. The Hackazon source code is located in /var/www/hackazon. You *should* be able to install VSCode (or another editor of your choice) inside the Docker and modify source code.
+
+To apply your changes, follow the instructions for *Stopping the container* and *Restarting the container*. DO NOT REMOVE THE CONTAINER OR YOUR CHANGES WILL BE LOST.
+
 ### Admin console
 The admin console for enabling/disabling vulnerabilities is available at
 ```shell
