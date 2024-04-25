@@ -3,9 +3,13 @@ MAINTAINER Brad Parker <brad@parker1723.com>
 RUN apt-get update && apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql php5-ldap unzip python3 python3-pip
 
-# Install Visual Studio Code - for editing, see README.md "Modifying the Hackazon source code"
-#ADD https://go.microsoft.com/fwlink/?LinkID=760868 /tmp/vscode.deb
-#RUN dpkg -i /tmp/vscode.deb && apt-get install -f
+# Provide an IDE for editing Hackazon Source code - see README.md "Modifying the Hackazon source code"
+# Install dependencies for Visual Studio Code
+RUN apt-get -y install libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libc6 libcairo2 libdbus-1-3 libdrm2 libgbm1 libglib2.0-0
+
+# Install Visual Studio Code
+ADD https://go.microsoft.com/fwlink/?LinkID=760868 /tmp/vscode.deb
+RUN dpkg -i /tmp/vscode.deb && apt-get install -f
 
 # Setup Hackazon
 RUN pip3 install supervisor
