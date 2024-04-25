@@ -1,43 +1,13 @@
 FROM ubuntu:14.04
 MAINTAINER Brad Parker <brad@parker1723.com>
-RUN apt-get update
-RUN apt-get -y upgrade
+RUN apt-get update && apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql php5-ldap unzip python3 python3-pip
 
+# Install Visual Studio Code - for editing, see README.md "Modifying the Hackazon source code"
+ADD https://go.microsoft.com/fwlink/?LinkID=760868 /tmp/vscode.deb
+RUN dpkg -i /tmp/vscode.deb && apt-get install -f
 
-# ============== TESTING =======================================
-# Update package lists and install required packages
-#RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
-#    mysql-client \
-#    apache2 \
-#    libapache2-mod-php5 \
-#    pwgen \
-#   python-setuptools \
-#    vim-tiny \
-#    php5-mysql \
-#    php5-ldap \
-#    unzip \
-#    python3 \
-#    python3-pip \
-#    wget \
-#    lsb-release \
-#    gnupg
-
-# Download MySQL 5.6 package
-#RUN wget https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.51-linux-glibc2.12-x86_64.tar.gz
-
-# Extract the downloaded package
-#RUN tar -xzvf mysql-5.6.51-linux-glibc2.12-x86_64.tar.gz -C /usr/local/
-
-# Rename the extracted directory
-#RUN mv /usr/local/mysql-5.6.51-linux-glibc2.12-x86_64 /usr/local/mysql
-
-# Clean up downloaded tarball
-#RUN rm mysql-5.6.51-linux-glibc2.12-x86_64.tar.gz
-# ==================================
-
-
-# setup hackazon
+# Setup Hackazon
 RUN pip3 install supervisor
 ADD ./scripts/start.sh /start.sh
 ADD ./scripts/passwordHash.php /passwordHash.php
