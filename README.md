@@ -81,7 +81,9 @@ To apply your changes, follow the instructions for *Stopping the container* and 
 3. You should now have a "Remote Explorer" icon on the left-side of your VSCode window; click on it, then click the "installing Docker" link to install Docker (you'll need to do this even if you've already installed Docker through WSL); you'll need to close and restart your PC afterwards
 4. Ensure the Hackazon container has been started
 5. Refresh/reload VSCode -- the "Remote Explorer" tab should now show the all-in-one-hackazon Docker container
-6. Working on it...
+6. Click the arrow on the "all-in-one-hackazon" link to connect to it; accept the warnings about an unsupported OS
+7. On the VSCode welcome screen, click "Open folder", then type "/var/ww/hackazon" and hit okay
+8. Congratulations, you now have access to the Hackazon source code inside the container
 
 ### Admin console
 The admin console for enabling/disabling vulnerabilities is available at
