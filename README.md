@@ -46,7 +46,7 @@ firefox http://localhost:80
 chromium http://localhost:80
 ```
 
-Then begin to configure Hackazon (direct link is http://localhost/install/login for the configuration screen) -- the default installer password (printed on startup) is "password". It's also available at the http://localhost/hackazon-db-pw.txt endpoint. You can change the DB password by editing line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh
+Then begin to configure Hackazon (direct link is http://localhost/install/login for the configuration screen) -- the default installer password (printed on startup) is "password". You can change the DB password by editing line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh
 
 ### Stopping the container
 To stop the container, run
