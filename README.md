@@ -66,7 +66,7 @@ If you removed the container, you'll need to run the startDocker file again. If 
 sudo docker start hackazon
 ```
 
-### Modifying the Hackazon sourec code (untested as of 04/25/2024)
+### Modifying the Hackazon source code (untested as of 04/25/2024)
 (THEORETICAL as of 04/25/2024) - If you need to modify the source code of the Hackazon instance running inside the Docker image:
 ```shell
 sudo docker exec -t -i hackazon /bin/bash
