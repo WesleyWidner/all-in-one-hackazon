@@ -111,4 +111,4 @@ Password: [password || the password you specified in line 13 of https://github.c
 ```
 
 ## Special Thanks
-This project is a direct fork (+ a couple of edits) from cmutzel's all-in-one-hackazon project (https://github.com/cmutzel/all-in-one-hackazon) -- thanks for all of the hard work!
+This project started as a direct fork of cmutzel's all-in-one-hackazon project (https://github.com/cmutzel/all-in-one-hackazon) -- thanks for all of the hard work!
