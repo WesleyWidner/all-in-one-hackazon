@@ -66,16 +66,7 @@ If you removed the container, you'll need to run the startDocker file again. If 
 sudo docker start hackazon
 ```
 
-### Modifying the Hackazon source code
-If you need to modify the source code of the Hackazon instance running inside the Docker image:
-```shell
-sudo docker exec -t -i hackazon /bin/bash
-```
-This will get you a shell inside the Docker build. The Hackazon source code is located in /var/www/hackazon. Note that you would need to modify the files using an editor of your choice, but that IDE support is limited due to Ubuntu 14.04's end-of-life.
-
-To apply your changes, follow the instructions for *Stopping the container* and *Restarting the container*. DO NOT REMOVE THE CONTAINER OR YOUR CHANGES WILL BE LOST.
-
-### Editing Hackazon source code from outside using VSCode
+### Editing Hackazon Source Code - Option #1 - VSCode
 1. Install VSCode: https://code.visualstudio.com/download
 2. Navigate to extensions and install the "Dev Containers" extension
 3. You should now have a "Remote Explorer" icon on the left-side of your VSCode window; click on it, then click the "installing Docker" link to install Docker (if using Windows, you'll need to do this even if you've already installed Docker through WSL); you may need to close and restart your PC afterwards
@@ -87,8 +78,17 @@ To apply your changes, follow the instructions for *Stopping the container* and 
 9. Click "Allow" if a notification that "You are about to connect to an OS version that is unsupported by Visual Studio Code" appears
 10. Click "Open folder" on the new "Welcome" tab window, then type "/var/ww/hackazon" and hit "OK" to open said folder (only necessary the first time -- folder stays open afterwards provided you don't close it)
 11. Congratulations, you now have access to the Hackazon source code inside the container
-12. You will need to reload the Hackazon Docker after making changes to the source code for said changes to take effect -- refer to "Stopping the container" and "Restarting the container"
+12. You will need to reload the Hackazon Docker after making changes to the source code for said changes to take effect; follow the instructions for *Stopping the container* and *Restarting the container*. DO NOT REMOVE THE CONTAINER OR YOUR CHANGES WILL BE LOST.
 13. When you're done editing code in the Docker container, click "File" > "Close Remote Connection" to close out the VSCode Docker connection
+
+### Editing Hackazon Source Code - Option #2 - Docker-Based Shell
+An alternative way to modify the source code of the Hacakzon instance running inside the Docker image is to run the following Linux command:
+```shell
+sudo docker exec -t -i hackazon /bin/bash
+```
+This will get you a shell inside the Docker build. The Hackazon source code is located in /var/www/hackazon. Note that you would need to modify the files using an editor of your choice, but that IDE support is limited due to Ubuntu 14.04's end-of-life.
+
+To apply your changes, follow the instructions for *Stopping the container* and *Restarting the container*. DO NOT REMOVE THE CONTAINER OR YOUR CHANGES WILL BE LOST.
 
 ### Admin console
 The admin console for enabling/disabling vulnerabilities is available at
