@@ -104,7 +104,8 @@ These admin credentials also work for the regular localhost sign in. Other valid
 ```shell
 Username: test_user
 Password: 123456
-===
+```
+```shell
 Username: hackazon
 Password: [password || the password you specified in line 13 of https://github.com/Spartan1776/all-in-one-hackazon/blob/master/scripts/start.sh]
 ```
