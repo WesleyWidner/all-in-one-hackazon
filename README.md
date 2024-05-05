@@ -72,7 +72,7 @@ sudo docker start hackazon
 3. You should now have a "Remote Explorer" icon on the left-side of your VSCode window; click on it, then click the "installing Docker" link to install Docker (if using Windows, you'll need to do this even if you've already installed Docker through WSL); you may need to close and restart your PC afterwards
 4. Ensure the Docker application is started
 5. Ensure the Hackazon container has been started
-6. If using Windows, you'll see a dropdown to select "WSL Targets" or "Dev Conainers" -- choose "Dev Containers"
+6. If using Windows, you'll see a dropdown to select "WSL Targets" or "Dev Containers" -- choose "Dev Containers"
 7. The "Remote Explorer" tab should show the "bepsoccer/all-in-one-hackazon" Docker container (you may need to refresh/reload VSCode if it isn't shown)
 8. When you hover over the container in VSCode, you should see an arrow ("Attach in Current Window"); click said arrow, and a VSCode "Welcome" tab should open
 9. Click "Allow" if a notification that "You are about to connect to an OS version that is unsupported by Visual Studio Code" appears
